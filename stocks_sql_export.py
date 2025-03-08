@@ -20,7 +20,7 @@ df["Revenuegrowth"] = pd.to_numeric(df["Revenuegrowth"], errors="coerce")
 conn = sqlite3.connect("sp500_companies.db")
 df.to_sql("companies", conn, if_exists="replace", index=False)
 
-# Export cleaned data as CSV for Power BI
+# Exporting cleaned data
 df.to_csv("sp500_companies_cleaned.csv", index=False)
 
 conn.close()
